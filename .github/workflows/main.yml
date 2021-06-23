@@ -15,18 +15,11 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       - name: Repository set labels sync
-        # You may pin to the exact commit or the version.
-        # uses: gimli01/repository-set-labels-sync@e38814aaa075f7482b00d53bc04f6edbf60e6e1c
         uses: gimli01/repository-set-labels-sync@v1.0.1
         with:
-          # Where to store labels for repositories
-          data-directory: # default is path/to/data
-          # Filename of existing repositories JSON list.
-          repositories-filename: # default is path/to/json
-          # Filename to save labels data.
-          labels-filename: # default is path/to/json
-          # Token to use to authenticate repositories.
-          token: # default is 
+          data-directory: "data/"
+          repositories-filename: "repositories.json"
+          labels-filename: "labels.json"
+          token: ${{ secrets.SYNC_LABELS_PAT }}
