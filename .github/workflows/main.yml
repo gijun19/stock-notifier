@@ -17,7 +17,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Repository set labels sync
-        uses: gimli01/repository-set-labels-sync@v1.1.0
+        uses: gimli01/repository-set-labels-sync@v1.1.1
         with:
           data-directory: "data/"
           repositories-filename: "repositories.json"
